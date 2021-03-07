@@ -1,19 +1,18 @@
+
 package model;
-
-import java.util.ArrayList;
-
-import utilities.BinaryTree;
 /**
-*
-* @author Esteban Novoa Quiñones
-*/
+ * @Author Edwar Malpica-Esteban Novoa Quiï¿½ones
+ * @NameClass SphereList.java
+ * @NameProyect Taller_Esferas
+ * @Date mar 7, 2021
+ */
+import java.util.ArrayList;
+import utilities.BinaryTree;
 
 public class SphereList {
 	
 	private ArrayList<Sphere> spheresList;
 	private SphereDistance sphereDistance;
-	
-
 	public SphereList( ArrayList<Sphere> sphereList) {
 		spheresList = sphereList;
 		sphereDistance = new SphereDistance();
@@ -22,14 +21,13 @@ public class SphereList {
      * Recorre la lista de esferas e incrementa sus coordenadas
      */
     private void moveSpheres(){
-        for (Sphere sphere : spheresList) {
-			//sphere.move();
-		}
+      for (Sphere sphere : spheresList) {
+			sphere.move();
+		  }
     }
-    
-    
+ 
    /**
-    * Añade las distancias calculadas entre todas las esferas del arreglo
+    * Aï¿½ade las distancias calculadas entre todas las esferas del arreglo
     */
 	public void setDistances() {
 		for (int i = 0; i < spheresList.size(); i++) {
@@ -59,7 +57,24 @@ public class SphereList {
 		this.sphereDistance = sphereDistance;
 	}
 	
+	/*
+	 * Analiza si entre dos esfereas hay colision
+	 */
+	public boolean coolision(Sphere sphere1,Sphere sphere2) {
+		boolean result  =false;
+		
+		if((sphere1.getRadio()+sphere2.getRadio()) <= 0/*Distancia entre esferas*/) {
+			result = true;
+		}
+		return result;
+	}
 	
-	
-    
+	/*
+	 * Cambia la direccion de la velocidad de dos esferas en colision
+	 */
+	public void changeDirection(Sphere sphere1,Sphere sphere2) {
+		sphere1.getSpeed().changeDirection();
+		sphere2.getSpeed().changeDirection();
+	}
+
 }

@@ -4,9 +4,8 @@ import java.io.BufferedReader;
 
 public class Sphere {
 
-//    public static final double PI = Math.PI;
     private Coordinate coordinate;
-   // private Speed speed;
+    private Speed speed;
     private double radio;
 
     
@@ -17,20 +16,21 @@ public class Sphere {
 	 * @param speed velocidad de la esfera
 	 * @param radio radio de la esfera
 	 */
-	public Sphere(Coordinate coordinate, double radio) {
+	public Sphere(Coordinate coordinate, Speed speed, double radio) {
 		super();
 		this.coordinate = coordinate;
-		//this.speed = speed;
+		this.speed = speed;
 		this.radio = radio;
 	}
 	/*
 	 * Mueve la esfera a una interaccion de la velocidad
 	 */
-//	public void move() {
-//		coordinate.setxAxis(coordinate.getxAxis()+speed.getX());
-//		coordinate.setyAxis(coordinate.getyAxis()+speed.getY());
-//		coordinate.setzAxis(coordinate.getzAxis()+speed.getZ());
-//	}
+	public void move() {
+		coordinate.setxAxis(coordinate.getxAxis()+speed.getX());
+		coordinate.setyAxis(coordinate.getyAxis()+speed.getY());
+		coordinate.setzAxis(coordinate.getzAxis()+speed.getZ());
+	}
+
 	/**
 	 * @return the coordinate
 	 */
@@ -46,7 +46,15 @@ public class Sphere {
 	/**
 	 * @return the speed
 	 */
-
+	public Speed getSpeed() {
+		return speed;
+	}
+	/**
+	 * @param speed the speed to set
+	 */
+	public void setSpeed(Speed speed) {
+		this.speed = speed;
+	}
 	/**
 	 * @return the radio
 	 */

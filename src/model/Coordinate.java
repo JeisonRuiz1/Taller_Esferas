@@ -4,33 +4,59 @@ public class Coordinate {
 
     private double xAxis, yAxis, zAxis;
 
-    public Coordinate(double xAxis, double yAxis, double zAxis){
-        this.xAxis = xAxis;
-        this.yAxis = yAxis;
-        this.zAxis = zAxis;
-    }
+	/**
+	 * @param xAxis
+	 * @param yAxis
+	 * @param zAxis
+	 */
+	public Coordinate(double xAxis, double yAxis, double zAxis) {
+		super();
+		this.xAxis = xAxis;
+		this.yAxis = yAxis;
+		this.zAxis = zAxis;
+	}
 
-    public double getxAxis() {
-        return xAxis;
-    }
+	/**
+	 * @return the xAxis
+	 */
+	public double getxAxis() {
+		return xAxis;
+	}
 
-    public void setxAxis(double xAxis) {
-        this.xAxis = xAxis;
-    }
+	/**
+	 * @param xAxis the xAxis to set
+	 */
+	public void setxAxis(double xAxis) {
+		this.xAxis = xAxis;
+	}
 
-    public double getyAxis() {
-        return yAxis;
-    }
+	/**
+	 * @return the yAxis
+	 */
+	public double getyAxis() {
+		return yAxis;
+	}
 
-    public void setyAxis(double yAxis) {
-        this.yAxis = yAxis;
-    }
+	/**
+	 * @param yAxis the yAxis to set
+	 */
+	public void setyAxis(double yAxis) {
+		this.yAxis = yAxis;
+	}
 
-    public double getzAxis() {
-        return zAxis;
-    }
+	/**
+	 * @return the zAxis
+	 */
+	public double getzAxis() {
+		return zAxis;
+	}
 
-    public void setzAxis(double zAxis) {
-        this.zAxis = zAxis;
-    }
+	/**
+	 * @param zAxis the zAxis to set
+	 */
+	public void setzAxis(double zAxis) {
+		this.zAxis = zAxis;
+	}
+
+   
 }
