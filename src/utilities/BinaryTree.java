@@ -4,33 +4,39 @@ package utilities;
 * @author Esteban Novoa Quiñones
 */
 
-public class BinaryTree<T>{
+public class BinaryTree{
 	
-	  private BinaryNode<T> root;
+	  private BinaryNode<Double> root;
 
 	    public BinaryTree() {
 	        this.root = null;
 	    }
 
 	
-	public BinaryNode<T> add(T info,BinaryNode<T> root) {
-		BinaryNode<T> aux = new BinaryNode<>(info);
-		if (iSortCriterian.compareTo(aux.info, root.info)>0) {
-			if (root.rightNode==null) {
-				root.rightNode = aux;
-			}else {
-				add(info,root.rightNode);
-			}
-		}
-		if (ISortCriterian.compareTo(aux.info, root.info)<0) {
-			if (root.leftNode==null) {
-				root.leftNode=aux;
-			}else {
-				add(info,root.leftNode);
-			}
-		}
-		
-		return aux;
-	}
+	    public void add (double info)	      {
+	          BinaryNode<Double> newNode = new BinaryNode<Double>(info);
+	          newNode.info = info;
+	          newNode.leftNode = null;
+	          newNode.rightNode= null;
+	          if (root == null)
+	        	  root= newNode;
+	          else
+	          {
+	        	  BinaryNode<Double> anterior = null, reco;
+	              reco = root;
+	              while (reco != null)
+	              {
+	                  anterior = reco;
+	                  if (info < reco.info)
+	                      reco = reco.leftNode;
+	                  else
+	                      reco = reco.rightNode;
+	              }
+	              if (info < anterior.info)
+	                  anterior.leftNode =  newNode;
+	              else
+	                  anterior.rightNode =  newNode;
+	          }
+	      }
 
 }

@@ -1,10 +1,10 @@
 package model;
 
-public class Coordinates {
+public class Coordinate {
 
     private double xAxis, yAxis, zAxis;
 
-    public Coordinates(double xAxis, double yAxis, double zAxis){
+    public Coordinate(double xAxis, double yAxis, double zAxis){
         this.xAxis = xAxis;
         this.yAxis = yAxis;
         this.zAxis = zAxis;
