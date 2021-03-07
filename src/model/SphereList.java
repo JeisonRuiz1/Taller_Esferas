@@ -22,7 +22,9 @@ public class SphereList {
     }
     
     
-    	
+   /**
+    * Añade las distancias calculadas entre todas las esferas del arreglo
+    */
 	private void setDistances() {
 		for (int i = 0; i < spheresList.length; i++) {
 			for (int j = i+1; j < spheresList.length-1; j++) {
@@ -31,6 +33,12 @@ public class SphereList {
 			
 		}
 	}
+	/**
+	 * Calcula la distancia entre las esferas, tomando en cuenta la formula propuesta para coordenadas en 3d
+	 * @param sphere1
+	 * @param sphere2
+	 * @return
+	 */
     
 	public double calculateDistance(Sphere sphere1,Sphere sphere2) {
 		double x = (sphere1.getCoordinate().getxAxis()-sphere2.getCoordinate().getxAxis());
