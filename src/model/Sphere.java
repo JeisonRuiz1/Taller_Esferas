@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 
 public class Sphere {
 
-//    public static final double PI = Math.PI;
     private Coordinate coordinate;
     private Speed speed;
     private double radio;
@@ -31,6 +30,7 @@ public class Sphere {
 		coordinate.setyAxis(coordinate.getyAxis()+speed.getY());
 		coordinate.setzAxis(coordinate.getzAxis()+speed.getZ());
 	}
+
 	/**
 	 * @return the coordinate
 	 */
