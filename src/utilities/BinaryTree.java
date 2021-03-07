@@ -38,6 +38,35 @@ public class BinaryTree{
 		size++;
 	}
 
+	public synchronized void recorridoPreorden()
+    {
+        ayudantePreorden(root);
+    }
+    //meoto recursivo para recorrido en preorden
+    
+    private void ayudantePreorden(BinaryNode<Double> nodo)    {
+        if(nodo == null)
+            return;
+        
+        System.out.print(nodo.info + " ");     //mostrar datos del nodo
+        ayudantePreorden(nodo.leftNode);   //recorre subarbol izquierdo
+        ayudantePreorden(nodo.rightNode);     //recorre subarbol derecho
+    }
+    public synchronized void recorridoPosorden()    {
+        ayudantePosorden(root);        
+    }
+    
+    //meotod recursivo para recorrido posorden
+    private void ayudantePosorden(BinaryNode<Double> nodo)
+    {
+        if( nodo == null )
+            return;
+        
+        ayudantePosorden(nodo.leftNode);
+        ayudantePosorden(nodo.rightNode);
+        System.out.print(nodo.info + " "+"\n");
+    }
+
 
 		public int getSize() {
 			return size;
