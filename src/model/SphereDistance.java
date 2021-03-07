@@ -5,6 +5,7 @@ import utilities.BinaryTree;
 public class SphereDistance {
 
 	private BinaryTree distanceList;
+	private	double averageDistance;
 
 	public BinaryTree getDistanceList() {
 		return distanceList;
@@ -25,6 +26,19 @@ public class SphereDistance {
 		double x = (sphere1.getCoordinate().getxAxis()-sphere2.getCoordinate().getxAxis());
 		double y = (sphere1.getCoordinate().getyAxis()-sphere2.getCoordinate().getyAxis());
 		double z = (sphere1.getCoordinate().getzAxis()-sphere2.getCoordinate().getzAxis());
-		return Math.sqrt(((Math.pow(2, x))+(Math.pow(2, y))+(Math.pow(2, z))));
+		double aux = Math.sqrt(((Math.pow(2, x))+(Math.pow(2, y))+(Math.pow(2, z))));
+		averageDistance += aux ;
+		return aux;
 	}
+	
+	/**
+	 * La distancia total acomulada la divide en el numero de elementos y obtiene el promedio
+	 * @return
+	 */
+	public double setAverageDistance() {
+		averageDistance = averageDistance/distanceList.getSize();
+		return averageDistance;
+	}
+	
+	
 }
