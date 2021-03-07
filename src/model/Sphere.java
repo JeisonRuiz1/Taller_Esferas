@@ -56,8 +56,13 @@ public class Sphere {
     public void calculateVolume(){
         volume = (4/3)*PI*(radio*radio*radio);
     }
+    
+	public void move() {
+
+	}
 
     public static void main(String[] args) {
         new Sphere();
     }
+    
 }
