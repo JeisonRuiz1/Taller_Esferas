@@ -6,6 +6,11 @@ public class SphereDistance {
 
 	private BinaryTree distanceList;
 	private	double averageDistance;
+	private double mostDistance;
+	
+	public SphereDistance() {
+		distanceList = new BinaryTree();
+	}
 
 	public BinaryTree getDistanceList() {
 		return distanceList;
@@ -39,6 +44,21 @@ public class SphereDistance {
 		averageDistance = averageDistance/distanceList.getSize();
 		return averageDistance;
 	}
+
+	/**
+	 * @return the mostDistance
+	 */
+	public double getMostDistance() {
+		return mostDistance;
+	}
+
+	/**
+	 * @param mostDistance the mostDistance to set
+	 */
+	public void setMostDistance(double mostDistance) {
+		this.mostDistance = mostDistance;
+	}
+	
 	
 	
 }
