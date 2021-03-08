@@ -7,15 +7,14 @@ package model;
  * @Date mar 7, 2021
  */
 import java.util.ArrayList;
-import utilities.BinaryTree;
 
 public class SphereList {
 	
-	private ArrayList<Sphere> spheresList;
+	private Sphere[] spheresList;
 	private SphereDistance sphereDistance;
 	
-	public SphereList( ArrayList<Sphere> sphereList) {
-		spheresList = sphereList;
+	public SphereList( int size) {
+		spheresList = new Sphere[size];
 		sphereDistance = new SphereDistance();
 	}
 	/**
@@ -31,16 +30,21 @@ public class SphereList {
     * A�ade las distancias calculadas entre todas las esferas del arreglo
     */
 	public void setDistances() {
-		for (int i = 0; i < spheresList.size(); i++) {
-			for (int j = i+1; j < spheresList.size()-1; j++) {
-				double distanceSpheres = sphereDistance.calculateDistance(spheresList.get(i), spheresList.get(j));
-			//	System.out.println("distancia mayor"+i+"  "+distanceSpheres);
+		for (int i = 0; i < spheresList.length; i++) {
+			for (int j = i+1; j < spheresList.length-1; j++) {
+				double distanceSpheres = sphereDistance.calculateDistance(spheresList[i], spheresList[j]);
 				if (distanceSpheres>sphereDistance.getMostDistance()) {
 					sphereDistance.setMostDistance(distanceSpheres);
 				}
+<<<<<<< HEAD
 				if(coolision(spheresList.get(i), spheresList.get(j))){
 					changeDirection(spheresList.get(i), spheresList.get(j));
+=======
+				if(coolision(spheresList[i], spheresList[j])){
+					changeDirection(spheresList[i], spheresList[j]);
+>>>>>>> origin/estructura-a-lista
 				}	
+				System.out.println("Distancia "+i+"  "+distanceSpheres);
 				sphereDistance.getDistanceList().add(distanceSpheres);
 			}
 			
@@ -73,6 +77,14 @@ public class SphereList {
 		return result;
 	}
 	
+	
+	/**
+	 * @return the spheresList
+	 */
+	public Sphere[] getSpheresList() {
+		return spheresList;
+	}
+
 	/*
 	 * Cambia la direccion de la velocidad de dos esferas en colision
 	 */
