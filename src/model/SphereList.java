@@ -63,7 +63,7 @@ public class SphereList {
 	public boolean coolision(Sphere sphere1,Sphere sphere2) {
 		boolean result  =false;
 		
-		if((sphere1.getRadio()+sphere2.getRadio()) <= 0/*Distancia entre esferas*/) {
+		if((sphere1.getRadio()+sphere2.getRadio()) <= (int)(sphereDistance.calculateDistance(sphere1,sphere2))) {
 			result = true;
 		}
 		return result;
