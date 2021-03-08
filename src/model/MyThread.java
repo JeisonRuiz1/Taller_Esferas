@@ -7,32 +7,51 @@ public abstract class MyThread implements Runnable{
     private boolean pause;
     private long speed;
 
+    /**
+     * Complejidad O(2)
+     * @param speed
+     */
     public MyThread(long speed){
         this.speed = speed;
         thread = new Thread(this);
     }
 
+    /**
+     * Complejidad O(2)
+     */
     public void start(){
         isRunning = true;
         thread.start();
     }
 
+    /**
+     * Complejidad O(log N)
+     */
     public synchronized void stop(){
         isRunning = false;
         notify();
     }
 
+    /**
+     * Complejidad O(2)
+     */
     public synchronized void pause(){
         pause = true;
         notify();
     }
 
+    /**
+     * Complejidad O(2)
+     */
     public synchronized void resume(){
         pause = false;
         notify();
     }
     protected abstract void executeTask();
-
+    
+    /**
+     * complejidad O(N log N)
+     */
     @Override
     public void run() {
         while(isRunning){

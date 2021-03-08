@@ -19,6 +19,7 @@ public class MySimpleNodo <T>{
      * Construir un nodo
      * @param info objeto de info util
      * @param nextNodo enlace o relacion con otro
+     * Complejidad O(2)
      */
     public MySimpleNodo(T info, MySimpleNodo nextNodo) {
         this.info = info;
@@ -28,6 +29,7 @@ public class MySimpleNodo <T>{
     /**
      * Nodo solo info
      * @param info informacion util
+     * Complejidad O(1)
      */
 
     public MySimpleNodo(T info) {

@@ -82,6 +82,7 @@ public class Speed {
 
 	/**
 	 * @return the z
+	 * Complejidad O(1)
 	 */
 	public double getZ() {
 		return z;
@@ -89,6 +90,7 @@ public class Speed {
 
 	/**
 	 * @param z the z to set
+	 * Complejidad O(1)
 	 */
 	public void setZ(double z) {
 		this.z = z;

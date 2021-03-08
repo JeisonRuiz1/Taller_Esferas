@@ -20,6 +20,10 @@ import model.SphereList;
  */
 public class TestCaseProbe {
 
+	/**
+	 * Complejidad O(log N)
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		ArrayList<Sphere> sphereList = new ArrayList<>();
 		Random random = new Random();

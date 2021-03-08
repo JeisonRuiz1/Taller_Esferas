@@ -26,11 +26,18 @@ public class MySimpleList <T> {
     private Comparator<T> isortCriterian;
     private int size;
 
+    /**
+     * Complejidad O(2)
+     */
     public MySimpleList() {
         head = null;
         this.isortCriterian = null;
     }
     
+    /**
+     * Complejidad O(2)
+     * @param criterian
+     */
     public MySimpleList(Comparator<T> criterian) {
 		this.isortCriterian = criterian;
 	}
@@ -40,6 +47,7 @@ public class MySimpleList <T> {
     /*
      * Añade un elemento usando el metodo de adicionar, segun corresponda
      * si es ordenada, o no
+     * Complejidad O(2)
      */
     public void add(T info) {
     	   
@@ -50,6 +58,10 @@ public class MySimpleList <T> {
     	}
     }
     
+    /**
+     * Complejidad O(n) de la forma T(n) = 2 T(n/2) + O(1)
+     * @param info
+     */
     public void addSort(T info) {
     	if(this.head == null) {
     		this.head = new MySimpleNodo<>(info);
@@ -77,6 +89,7 @@ public class MySimpleList <T> {
     /**
      * Adiciona un elemento al final de la lista ...
      * @param info  elemento a adicionar...
+     * Complejidad O(n) de la forma T(n) = 2 T(n/2) + O(1)
      */
     public void addLess(T info){
       if (this.head==null) {
@@ -90,10 +103,11 @@ public class MySimpleList <T> {
       }
       size++;
     }
+    
     /**
      * Elimina el objeto info de la lista
-     *
      * @param data
+     * Complejidad O(n) de la forma T(n) = 2 T(n/2) + O(1)
      */
     public void delete(T data) {
         reset();
@@ -112,12 +126,15 @@ public class MySimpleList <T> {
     /**
      * Determina si la lista esta vacia o no
      * @return true vacia
+     * Complejidad O(1)
      */    
     public boolean isEmpty(){
         return this.head == null;
     }
+    
     /**
      * Busca objetos que cumplan con un criterio de busqueda
+     * Complejidad O(n) de la forma T(n) = 2 T(n/2) + O(1)
      */
     public MySimpleList<T> search(ISeacrhCriterio<T> criterio){
        MySimpleList<T> listAux = new MySimpleList<>();
@@ -135,6 +152,11 @@ public class MySimpleList <T> {
         return listAux;
     }
     
+    /**
+     * @param criterio
+     * @return
+     * Complejidad O(n) de la forma T(n) = 2 T(n/2) + O(1)
+     */
     public T searchElement(ISeacrhCriterio<T> criterio){
        MySimpleList<T> listAux = new MySimpleList<>();
        MySimpleNodo<T> aux = this.head;
@@ -150,10 +172,12 @@ public class MySimpleList <T> {
 
         return null;
     }
+    
     /**
      * Verifica si un objeto esta en la lista
      * @param data objeto a buscar
      * @return true si esta en la lista o false si no esta
+     * Complejidad O(n) de la forma T(n) = 2 T(n/2) + O(1)
      */
     public boolean isIn(T data){
         boolean res = false;
@@ -172,8 +196,8 @@ public class MySimpleList <T> {
     }
     
     /**
-     * 
      * @return 
+     * Complejidad O(2)
      */
     public T next(){
         T aux =  this.currentElement.info;
@@ -183,7 +207,8 @@ public class MySimpleList <T> {
     
     /**
      * Inserta el elemento data a la lista en primera posicion
-     * @param data 
+     * @param data
+     * Complejidad O(2) 
      */
     public void instert(T data){
         if (head == null) {
@@ -195,6 +220,7 @@ public class MySimpleList <T> {
     
     /**
      * Imprime los elements de la lista
+     * Complejidad O(n) de la forma T(n) = 2 T(n/2) + O(1)
      */
     public void printList(){
         reset();
@@ -205,6 +231,7 @@ public class MySimpleList <T> {
     }
     /**
      * Recorre la lista y devuelve el numero de elementos
+     * Complejidad O(n) de la forma T(n) = 2 T(n/2) + O(1)
      * @return 
      */
     public int size(){
@@ -220,6 +247,7 @@ public class MySimpleList <T> {
     /**
      * Fusiona dos listas agrupando los elementos al final de la lista original
      * @param newList 
+     * Complejidad O(n) de la forma T(n) = 2 T(n/2) + O(1)
      */
     public void joinListEnd(MySimpleList newList){
         MySimpleNodo currentNodoNewList = newList.head;
@@ -231,6 +259,7 @@ public class MySimpleList <T> {
     /**
      * Fusiona dos listas agrupando los elementos al comienzo de la lista original
      * @param newList 
+     * Complejidad O(n) de la forma T(n) = 2 T(n/2) + O(1)
      */
     public void joinListBegin(MySimpleList newList){
         newList.reset();
@@ -270,6 +299,7 @@ public class MySimpleList <T> {
     /**
      * AÃ±ade un arreglo T a la lista original al comienzo
      * @param tList 
+     * Complejidad O(n) de la forma T(n) = 2 T(n/2) + O(1)
      */
     public void addObjectArrayBegin(T[] tList){
         int count = 0;

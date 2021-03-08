@@ -88,11 +88,12 @@ public class SphereDistance {
 	public void setMostDistance(double mostDistance) {
 		this.mostDistance = mostDistance;
 	}
+	
 	/**
 	 * Obtiene las distancias que mas se repiten
 	 * @return
+	 * Complejidad O(log N)
 	 */
-
 	public List<Double> getModa() {
 		cursor.reset();
         Map<Double, Integer> auxNumber = new HashMap();

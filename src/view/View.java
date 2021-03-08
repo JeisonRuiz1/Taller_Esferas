@@ -16,6 +16,9 @@ public class View {
 	
 	private Scanner scanner;
 	
+	/**
+	 * Complejidad O(1)
+	 */
 	public View() {
 		scanner = new Scanner(System.in);
 	}
@@ -27,7 +30,10 @@ public class View {
 		System.out.println(message);
 	};
 	
-	
+	/**
+	 * Complejidad O(2)
+	 * @return
+	 */
 	public int getOption() {
 		int result = 0;
 		try {

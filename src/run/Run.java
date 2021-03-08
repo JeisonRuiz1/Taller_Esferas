@@ -12,6 +12,10 @@ import view.View;
 
 public class Run {
 
+	/**
+	 * Complejidad O(log N)
+	 * @param args
+	 */
     public static void main(String[] args) {
     	
     	if(args.length == 1) {
