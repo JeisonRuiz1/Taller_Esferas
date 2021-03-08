@@ -37,6 +37,9 @@ public class SphereList {
 				if (distanceSpheres>sphereDistance.getMostDistance()) {
 					sphereDistance.setMostDistance(distanceSpheres);
 				}
+				if(coolision(spheresList.get(i), spheresList.get(j))){
+					changeDirection(spheresList.get(i), spheresList.get(j)));
+				}	
 				sphereDistance.getDistanceList().add(distanceSpheres);
 			}
 			
