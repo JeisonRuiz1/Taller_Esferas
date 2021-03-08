@@ -17,6 +17,9 @@ public class SphereDistance {
 	private	double averageDistance;
 	private double mostDistance;
 	
+	/**
+	 * Complejidad O(1)
+	 */
 	public SphereDistance() {
 		distanceList = new MySimpleList<Double>(new Comparator<Double>() {
 			@Override
@@ -27,17 +30,28 @@ public class SphereDistance {
 		cursor = new Cursor<Double>(distanceList);
 	}
 
-	public MySimpleList<Double> getDistanceList() {
+	/**
+	 * Complejidad O(1)
+	 * @return arbol binario
+	 */
+	public BinaryTree getDistanceList() {
 		return distanceList;
 	}
 
-
+	/**
+	 * Complejidad O(1)
+	 * @param distanceList
+	 */
+	public void setDistanceList(BinaryTree distanceList) {
+		this.distanceList = distanceList;
+	}
 	
 	/**
 	 * Calcula la distancia entre las esferas, tomando en cuenta la formula propuesta para coordenadas en 3d
 	 * @param sphere1
 	 * @param sphere2
-	 * @return
+	 * @return la sumatoria total de las distancias de las esferas
+	 * Complejidad O(5)
 	 */
 	public double calculateDistance(Sphere sphere1,Sphere sphere2) {
 		double x = (sphere1.getCoordinate().getxAxis()-sphere2.getCoordinate().getxAxis());
@@ -52,6 +66,7 @@ public class SphereDistance {
 	/**
 	 * La distancia total acomulada la divide en el numero de elementos y obtiene el promedio
 	 * @return
+	 * Complejidad O(1)
 	 */
 	public double getAverageDistance() {
 		averageDistance = averageDistance/distanceList.getSize();
@@ -60,6 +75,7 @@ public class SphereDistance {
 
 	/**
 	 * @return the mostDistance
+	 * Complejidad O(1)
 	 */
 	public double getMostDistance() {
 		return mostDistance;
@@ -67,6 +83,7 @@ public class SphereDistance {
 
 	/**
 	 * @param mostDistance the mostDistance to set
+	 * Complejidad O(1)
 	 */
 	public void setMostDistance(double mostDistance) {
 		this.mostDistance = mostDistance;

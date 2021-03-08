@@ -5,6 +5,7 @@ public class Coordinate {
     private double xAxis, yAxis, zAxis;
 
 	/**
+	 * Complejidad O(4)
 	 * @param xAxis
 	 * @param yAxis
 	 * @param zAxis
@@ -25,6 +26,7 @@ public class Coordinate {
 
 	/**
 	 * @param xAxis the xAxis to set
+	 * Complejidad O(1)
 	 */
 	public void setxAxis(double xAxis) {
 		this.xAxis = xAxis;
@@ -32,6 +34,7 @@ public class Coordinate {
 
 	/**
 	 * @return the yAxis
+	 * Complejidad O(1)
 	 */
 	public double getyAxis() {
 		return yAxis;
@@ -39,6 +42,7 @@ public class Coordinate {
 
 	/**
 	 * @param yAxis the yAxis to set
+	 * Complejidad O(1)
 	 */
 	public void setyAxis(double yAxis) {
 		this.yAxis = yAxis;
@@ -46,6 +50,7 @@ public class Coordinate {
 
 	/**
 	 * @return the zAxis
+	 * Complejidad O(1)
 	 */
 	public double getzAxis() {
 		return zAxis;
@@ -53,6 +58,7 @@ public class Coordinate {
 
 	/**
 	 * @param zAxis the zAxis to set
+	 * Complejidad O(1)
 	 */
 	public void setzAxis(double zAxis) {
 		this.zAxis = zAxis;

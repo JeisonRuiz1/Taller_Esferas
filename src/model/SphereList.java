@@ -1,50 +1,51 @@
 
 package model;
 /**
- * @Author Edwar Malpica-Esteban Novoa Qui�ones
+ * @Author Edwar Malpica-Esteban Novoa Quiniones
  * @NameClass SphereList.java
  * @NameProyect Taller_Esferas
  * @Date mar 7, 2021
  */
-import java.util.ArrayList;
 
 public class SphereList {
 	
 	private Sphere[] spheresList;
 	private SphereDistance sphereDistance;
 	
-	public SphereList( int size) {
-		spheresList = new Sphere[size];
+	/**
+	 * @param sphereList
+	 * Complejidad O(1)
+	 */
+	public SphereList(Sphere[] sphereList) {
+		spheresList = sphereList;
 		sphereDistance = new SphereDistance();
 	}
+	
 	/**
      * Recorre la lista de esferas e incrementa sus coordenadas
+     * Complejidad O(log N)
      */
     private void moveSpheres(){
       for (Sphere sphere : spheresList) {
 			sphere.move();
-		  }
+      }
     }
  
    /**
-    * A�ade las distancias calculadas entre todas las esferas del arreglo
+    * Aniade las distancias calculadas entre todas las esferas del arreglo
+    * Complejidad O(N log N)
     */
 	public void setDistances() {
-		for (int i = 0; i < spheresList.length; i++) {
-			for (int j = i+1; j < spheresList.length-1; j++) {
+		for (int i = 0; i < spheresList.length - 1; i++) {
+			for (int j = i+1; j < spheresList.length; j++) {
 				double distanceSpheres = sphereDistance.calculateDistance(spheresList[i], spheresList[j]);
 				if (distanceSpheres>sphereDistance.getMostDistance()) {
 					sphereDistance.setMostDistance(distanceSpheres);
 				}
-<<<<<<< HEAD
-				if(coolision(spheresList.get(i), spheresList.get(j))){
-					changeDirection(spheresList.get(i), spheresList.get(j));
-=======
+				
 				if(coolision(spheresList[i], spheresList[j])){
 					changeDirection(spheresList[i], spheresList[j]);
->>>>>>> origin/estructura-a-lista
 				}	
-				System.out.println("Distancia "+i+"  "+distanceSpheres);
 				sphereDistance.getDistanceList().add(distanceSpheres);
 			}
 			
@@ -53,6 +54,7 @@ public class SphereList {
 
 	/**
 	 * @return the sphereDistance
+	 * Complejidad O(1)
 	 */
 	public SphereDistance getSphereDistance() {
 		return sphereDistance;
@@ -60,6 +62,7 @@ public class SphereList {
 
 	/**
 	 * @param sphereDistance the sphereDistance to set
+	 * Complejidad O(1)
 	 */
 	public void setSphereDistance(SphereDistance sphereDistance) {
 		this.sphereDistance = sphereDistance;
@@ -67,6 +70,7 @@ public class SphereList {
 	
 	/*
 	 * Analiza si entre dos esfereas hay colision
+	 * Complejidad O(3)
 	 */
 	public boolean coolision(Sphere sphere1,Sphere sphere2) {
 		boolean result  =false;
@@ -77,16 +81,9 @@ public class SphereList {
 		return result;
 	}
 	
-	
-	/**
-	 * @return the spheresList
-	 */
-	public Sphere[] getSpheresList() {
-		return spheresList;
-	}
-
 	/*
 	 * Cambia la direccion de la velocidad de dos esferas en colision
+	 * Complejidad O(20)
 	 */
 	public void changeDirection(Sphere sphere1,Sphere sphere2) {
 		sphere1.getSpeed().changeDirection();
