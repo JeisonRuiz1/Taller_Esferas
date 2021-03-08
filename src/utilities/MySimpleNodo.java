@@ -34,6 +34,15 @@ public class MySimpleNodo <T>{
         this.info = info;
        // this.nextNodo = null;
     }
+
+	/**
+	 * @return the info
+	 */
+	public T getInfo() {
+		return info;
+	}
+
+
     
     
 }

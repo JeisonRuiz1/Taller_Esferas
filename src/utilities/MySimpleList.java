@@ -28,39 +28,29 @@ public class MySimpleList <T> {
 
     public MySimpleList() {
         head = null;
+        this.isortCriterian = null;
     }
+    
+    public MySimpleList(Comparator<T> criterian) {
+		this.isortCriterian = criterian;
+	}
    
     
-    /**
-     * Adiciona un elemento a la lista
-     * @param info 
-     */
-//    public void add(T info){
-//        if (this.head == null) {
-//            this.head = new MySimpleNodo<>(info);
-//        }else{
-//            MySimpleNodo aux = this.head;
-//            while (aux.nextNodo != null) {   
-//                aux = aux.nextNodo;
-//            }
-//            aux.nextNodo = new MySimpleNodo<>(info);
-//        }
-//        size++;
-//    }
 
     /*
      * Añade un elemento usando el metodo de adicionar, segun corresponda
      * si es ordenada, o no
      */
     public void add(T info) {
-    	if(this.isortCriterian != null) {
+    	   
+    	if(this.isortCriterian != null) {    				
     		addSort(info);
     	}else {
     		addLess(info);
     	}
     }
     
-    private void addSort(T info) {
+    public void addSort(T info) {
     	if(this.head == null) {
     		this.head = new MySimpleNodo<>(info);
     	}else {
@@ -88,7 +78,7 @@ public class MySimpleList <T> {
      * Adiciona un elemento al final de la lista ...
      * @param info  elemento a adicionar...
      */
-    private void addLess(T info){
+    public void addLess(T info){
       if (this.head==null) {
          this.head = new MySimpleNodo<>(info);
       } else {
@@ -293,10 +283,4 @@ public class MySimpleList <T> {
         return size;
     }
     
-    /**
-     * Ordena la lista de
-     */
-    public void sortList(ISeacrhCriterio iSeacrhCriterio){
-        
-    }
 }

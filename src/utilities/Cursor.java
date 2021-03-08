@@ -27,4 +27,13 @@ public class Cursor <T>{
         this.currentElement = this.currentElement.nextNodo;
         return aux;
     }
+
+	/**
+	 * @return the currentElement
+	 */
+	public MySimpleNodo<T> getCurrentElement() {
+		return currentElement;
+	}
+
+    
 }
