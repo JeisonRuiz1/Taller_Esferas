@@ -1,24 +1,22 @@
 package model;
 
-import utilities.BinaryTree;
+import utilities.MySimpleList;
 
 public class SphereDistance {
 
-	private BinaryTree distanceList;
+	private MySimpleList<Double> distanceList;
 	private	double averageDistance;
 	private double mostDistance;
 	
 	public SphereDistance() {
-		distanceList = new BinaryTree();
+		distanceList = new MySimpleList<Double>();
 	}
 
-	public BinaryTree getDistanceList() {
+	public MySimpleList<Double> getDistanceList() {
 		return distanceList;
 	}
 
-	public void setDistanceList(BinaryTree distanceList) {
-		this.distanceList = distanceList;
-	}
+
 	
 	/**
 	 * Calcula la distancia entre las esferas, tomando en cuenta la formula propuesta para coordenadas en 3d
@@ -64,8 +62,8 @@ public class SphereDistance {
 
 	public static void main(String[] args) {
 		SphereDistance distance = new SphereDistance();
-		Sphere a = new Sphere(new Coordinate(5,15,78.5),78);
-		Sphere b = new Sphere(new Coordinate(10,30,63.4),78);
+		Sphere a = new Sphere(new Coordinate(5,15,78.5),new Speed(9, 4, 5),78);
+		Sphere b = new Sphere(new Coordinate(10,30,63.4),new Speed(9, 4, 5),78);
 		System.out.println("Distancia :"+distance.calculateDistance(a,b));
 	}
 	
