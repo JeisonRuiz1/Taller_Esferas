@@ -13,6 +13,7 @@ public class Speed {
 	 * @param x
 	 * @param y
 	 * @param z
+	 * Complejidad O(4)
 	 */
 	public Speed(double x, double y, double z) {
 		super();
@@ -23,6 +24,7 @@ public class Speed {
 	
 	/*
 	 * Cambia la direccion de la velocidad
+	 * Complejidad O(10)
 	 */
 	public void changeDirection() {
 		double r = Math.sqrt(Math.pow(x, 2)+Math.pow(y, 2)+Math.pow(z, 2));
@@ -48,6 +50,7 @@ public class Speed {
 
 	/**
 	 * @return the x
+	 * Complejidad O(1)
 	 */
 	public double getX() {
 		return x;
@@ -55,6 +58,7 @@ public class Speed {
 
 	/**
 	 * @param x the x to set
+	 * Complejidad O(1)
 	 */
 	public void setX(double x) {
 		this.x = x;
@@ -62,6 +66,7 @@ public class Speed {
 
 	/**
 	 * @return the y
+	 * Complejidad O(1)
 	 */
 	public double getY() {
 		return y;
@@ -69,6 +74,7 @@ public class Speed {
 
 	/**
 	 * @param y the y to set
+	 * Complejidad O(1)
 	 */
 	public void setY(double y) {
 		this.y = y;

@@ -13,6 +13,10 @@ public class BinaryTree{
 		this.root = null;
 	}
 
+	/**
+	 * @param info
+	 * Complejidad O(n) de la forma T(n) = 2 T(n/2) + O(1)
+	 */
 	public void add(double info) {
 		BinaryNode<Double> newNode = new BinaryNode<Double>(info);
 		newNode.info = info;
@@ -38,12 +42,18 @@ public class BinaryTree{
 		size++;
 	}
 
-	public synchronized void recorridoPreorden()
-    {
+	/**
+	 * Complejidad O(4) 
+	 */
+	public synchronized void recorridoPreorden(){
         ayudantePreorden(root);
     }
     //meoto recursivo para recorrido en preorden
     
+	/**
+	 * @param nodo
+	 * Complejidad O(4)
+	 */
     private void ayudantePreorden(BinaryNode<Double> nodo)    {
         if(nodo == null)
             return;
@@ -52,13 +62,20 @@ public class BinaryTree{
         ayudantePreorden(nodo.leftNode);   //recorre subarbol izquierdo
         ayudantePreorden(nodo.rightNode);     //recorre subarbol derecho
     }
+    
+    /**
+     * Complejidad O(4)
+     */
     public synchronized void recorridoPosorden()    {
         ayudantePosorden(root);        
     }
     
-    //meotod recursivo para recorrido posorden
-    private void ayudantePosorden(BinaryNode<Double> nodo)
-    {
+    /**
+     * meotod recursivo para recorrido posorden
+     * @param nodo
+     * Complejidad O(log N)
+     */
+    private void ayudantePosorden(BinaryNode<Double> nodo){
         if( nodo == null )
             return;
         
@@ -67,15 +84,19 @@ public class BinaryTree{
         System.out.print(nodo.info + " "+"\n");
     }
 
+    /**
+     * @return
+     * Complejidad O(1)
+     */
+	public int getSize() {
+		return size;
+	}
 
-		public int getSize() {
-			return size;
-		}
-
-
-		public void setSize(int size) {
-			this.size = size;
-		}
-	    
-
+	/**
+	 * @param size
+	 * Complejidad O(1)
+	 */
+	public void setSize(int size) {
+		this.size = size;
+	}
 }
