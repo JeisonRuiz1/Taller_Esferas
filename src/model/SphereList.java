@@ -36,13 +36,8 @@ public class SphereList {
 				if (distanceSpheres>sphereDistance.getMostDistance()) {
 					sphereDistance.setMostDistance(distanceSpheres);
 				}
-<<<<<<< HEAD
-				if(coolision(spheresList.get(i), spheresList.get(j))){
-					changeDirection(spheresList.get(i), spheresList.get(j));
-=======
 				if(coolision(spheresList[i], spheresList[j])){
 					changeDirection(spheresList[i], spheresList[j]);
->>>>>>> origin/estructura-a-lista
 				}	
 				System.out.println("Distancia "+i+"  "+distanceSpheres);
 				sphereDistance.getDistanceList().add(distanceSpheres);
