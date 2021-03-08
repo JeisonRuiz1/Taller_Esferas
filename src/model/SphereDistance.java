@@ -26,7 +26,6 @@ public class SphereDistance {
 	 * @param sphere2
 	 * @return
 	 */
-    
 	public double calculateDistance(Sphere sphere1,Sphere sphere2) {
 		double x = (sphere1.getCoordinate().getxAxis()-sphere2.getCoordinate().getxAxis());
 		double y = (sphere1.getCoordinate().getyAxis()-sphere2.getCoordinate().getyAxis());
@@ -62,11 +61,11 @@ public class SphereDistance {
 	
 
 
-	public static void main(String[] args) {
-		SphereDistance distance = new SphereDistance();
-		Sphere a = new Sphere(new Coordinate(5,15,78.5),78);
-		Sphere b = new Sphere(new Coordinate(10,30,63.4),78);
-		System.out.println("Distancia :"+distance.calculateDistance(a,b));
-	}
+//	public static void main(String[] args) {
+//		SphereDistance distance = new SphereDistance();
+//		Sphere a = new Sphere(new Coordinate(5,15,78.5),78);
+//		Sphere b = new Sphere(new Coordinate(10,30,63.4),78);
+//		System.out.println("Distancia :"+distance.calculateDistance(a,b));
+//	}
 	
 }

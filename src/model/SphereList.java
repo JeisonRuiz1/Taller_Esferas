@@ -13,6 +13,7 @@ public class SphereList {
 	
 	private ArrayList<Sphere> spheresList;
 	private SphereDistance sphereDistance;
+	
 	public SphereList( ArrayList<Sphere> sphereList) {
 		spheresList = sphereList;
 		sphereDistance = new SphereDistance();
@@ -38,7 +39,7 @@ public class SphereList {
 					sphereDistance.setMostDistance(distanceSpheres);
 				}
 				if(coolision(spheresList.get(i), spheresList.get(j))){
-					changeDirection(spheresList.get(i), spheresList.get(j)));
+					changeDirection(spheresList.get(i), spheresList.get(j));
 				}	
 				sphereDistance.getDistanceList().add(distanceSpheres);
 			}
