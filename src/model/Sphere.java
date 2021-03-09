@@ -1,6 +1,6 @@
 package model;
 
-
+import java.util.Random;
 
 public class Sphere {
 
@@ -82,5 +82,15 @@ public class Sphere {
 		return "Sphere [coordinate=" + coordinate.toString() + ", speed=" + speed.toString() + ", radio=" + radio + "]";
 	}
 	
+//	public static void main(String[] args) {
+//		Random random = new Random();
+//		Sphere sphere = new Sphere(new Coordinate(random.nextInt(100), random.nextInt(100), random.nextInt(100)),new Speed(random.nextInt(10), random.nextInt(10), random.nextInt(10)), random.nextInt(20));
+//		for (int i = 0; i < 10; i++) {
+//			sphere.move();
+//			System.out.println(sphere.toString());
+//		}
+//		
+//		
+//	}
 	
 }

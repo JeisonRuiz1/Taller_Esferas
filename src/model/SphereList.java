@@ -37,7 +37,9 @@ public class SphereList {
 		    				sphere.move();
 		    				setDistances();
 		    	      }
+		    		 
 		    		 System.out.println(""+i);
+		    		 System.out.println("Mayor distancia "+ sphereDistance.getMostDistance());
 		    		 System.out.println(spheresList[0].getCoordinate().getxAxis());
 		    		 System.out.println(spheresList[0].toString());
 		    		 try {
