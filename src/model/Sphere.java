@@ -3,7 +3,7 @@ package model;
 
 
 public class Sphere {
-
+	
     private Coordinate coordinate;
     private Speed speed;
     private double radio;

@@ -127,6 +127,4 @@ public class SphereDistance {
 //		Sphere b = new Sphere(new Coordinate(10,30,63.4),78);
 //		System.out.println("Distancia :"+distance.calculateDistance(a,b));
 //	}
-	
-	
 }

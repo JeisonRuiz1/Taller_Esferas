@@ -35,7 +35,6 @@ public class TestCaseProbe {
 		 SphereList list = new SphereList(sphereList);
 		 list.setDistances();
 		 System.out.println("Mayor distancia:" + list.getSphereDistance().getMostDistance());
-		
 	}
 	
 }

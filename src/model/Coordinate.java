@@ -3,7 +3,6 @@ package model;
 public class Coordinate {
 
     private double xAxis, yAxis, zAxis;
-
     
 	/**
 	 * Complejidad O(4)

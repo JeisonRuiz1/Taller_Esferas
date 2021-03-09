@@ -27,7 +27,6 @@ public class TestBinaryTree {
 //		sphereList.setDistances();
 		//sphereList.getSphereDistance().getDistanceList().printList();;
 		sphereList.getSphereDistance().getModa();
-		
 	}
 
 	

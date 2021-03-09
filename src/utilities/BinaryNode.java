@@ -28,4 +28,5 @@ public class BinaryNode<T> {
 	public BinaryNode(T info) {
 		this.info = info;
 	}
+	
 }

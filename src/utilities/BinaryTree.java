@@ -5,6 +5,7 @@ package utilities;
 */
 
 public class BinaryTree{
+	
 
 	private BinaryNode<Double> root;
 	private int size;

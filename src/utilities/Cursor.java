@@ -22,6 +22,7 @@ public class Cursor <T>{
         this.mySimpleList = mySimpleList;
         this.currentElement = mySimpleList.head;
     }
+    
 
     /**
      * Complejidad O(1)

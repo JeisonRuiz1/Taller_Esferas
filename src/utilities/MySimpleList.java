@@ -311,5 +311,6 @@ public class MySimpleList <T> {
 
     public int getSize() {
         return size;
-    } 
+    }
+    
 }

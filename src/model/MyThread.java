@@ -6,7 +6,6 @@ public abstract class MyThread implements Runnable{
     private boolean isRunning;
     private boolean pause;
     private long speed;
-    
 
     /**
      * Complejidad O(2)
