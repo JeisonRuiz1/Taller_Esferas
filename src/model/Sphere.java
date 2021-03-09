@@ -2,7 +2,7 @@ package model;
 
 
 
-public class Sphere {
+public class Sphere extends MyThread{
 
     private Coordinate coordinate;
     private Speed speed;
@@ -15,7 +15,7 @@ public class Sphere {
 	 * Complejidad O(4)
 	 */
 	public Sphere(Coordinate coordinate, Speed speed, double radio) {
-		super();
+		super((int)Math.random());
 		this.coordinate = coordinate;
 		this.speed = speed;
 		this.radio = radio;
@@ -28,6 +28,17 @@ public class Sphere {
 		coordinate.setxAxis(coordinate.getxAxis()+speed.getX());
 		coordinate.setyAxis(coordinate.getyAxis()+speed.getY());
 		coordinate.setzAxis(coordinate.getzAxis()+speed.getZ());
+	}
+
+	@Override
+	protected void executeTask() {
+		move();
+		try {
+			Thread.sleep((int)Math.random());
+		} catch (Exception e) {
+			//TODO: handle exception
+		}
+		
 	}
 
 	/**
@@ -77,4 +88,6 @@ public class Sphere {
 	public void setRadio(double radio) {
 		this.radio = radio;
 	}
+	
+	
 }

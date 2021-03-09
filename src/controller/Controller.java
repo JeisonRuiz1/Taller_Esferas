@@ -32,12 +32,14 @@ public class Controller {
 		this.view = view;
 		sphereList.setDistances();
 		init();
+		
 	}
 	
 	private void init() {
 		view.showMessage(Constants.MENU);
 		int a = view.getOption();
 		System.out.println(a);
+		
 		switch (a) {
 		case 1:
 			view.showMessage(getMostDistance());
@@ -85,6 +87,7 @@ public class Controller {
 		for (int i = 0; i < sphere.length; i++) {
 			sphere[i] = new Sphere(new Coordinate( Math.random()*100+1,  Math.random()*100+1,  Math.random()*100+1), new Speed( Math.random()*10, Math.random()*10, Math.random()*10), Math.random()*50+1);
 		}
+		
 		new Controller(new SphereList(sphere),new View());
 	}
 	

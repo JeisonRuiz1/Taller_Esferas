@@ -19,18 +19,27 @@ public class SphereList {
 	public SphereList(Sphere[] sphereList) {
 		spheresList = sphereList;
 		sphereDistance = new SphereDistance();
+		runSpheres();
 	}
 	
 	/**
      * Recorre la lista de esferas e incrementa sus coordenadas
      * Complejidad O(log N)
      */
+
+	 /**
     private void moveSpheres(){
       for (Sphere sphere : spheresList) {
 			sphere.move();
       }
     }
+	 */
  
+	public void runSpheres(){
+		for (int i = 0; i < spheresList.length; i++) {
+			spheresList[i].start();
+		}
+    }
    /**
     * Aniade las distancias calculadas entre todas las esferas del arreglo
     * Complejidad O(N log N)
