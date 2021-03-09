@@ -1,0 +1,38 @@
+[33mcommit 2f67a6d832c2705fb35afd5a369e3b8df640be96[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/DiseñoAlgoritmos[m[33m)[m
+Author: eduar <eduar@Edwar-Malpica>
+Date:   Sun Mar 7 17:31:03 2021 -0500
+
+    Comentario de metodo
+
+[33mcommit cbb413ed6d3ed43b09275048a8afcc4f86529625[m
+Author: eduar <eduar@Edwar-Malpica>
+Date:   Sun Mar 7 17:30:08 2021 -0500
+
+    Implementacion Metodos de Colsion y rebote
+
+[33mcommit 20a7a844b008ee031f90b9dfdcee47d9f7b0fefd[m
+Author: eduar <eduar@Edwar-Malpica>
+Date:   Sun Mar 7 12:40:57 2021 -0500
+
+    Cambio en la clase sphere, ya se maneja velocidad y movimiento, se quito
+    la variable diametro, ya que no tiene ningun uso
+
+[33mcommit 267133f78211893c9c43c9df16c22da416a148e0[m[33m ([m[1;31morigin/Checho[m[33m)[m
+Author: JeisonRuiz1 <JeisonRuiz1910@gmail.com>
+Date:   Thu Mar 4 13:40:26 2021 -0500
+
+    Clase sphere definida
+    
+    Se creo la clase Shpere en donde  el objeto contiene su correspondiente vector posicion, radio, diametro y volumen calculado.
+
+[33mcommit 2dc97616d493d04168f42d5f79bb50f927a8f552[m
+Author: JeisonRuiz1 <JeisonRuiz1910@gmail.com>
+Date:   Mon Mar 1 11:00:49 2021 -0500
+
+    Codigo inicial Esferas
+
+[33mcommit 15d32d876bc51148b08562e0c100c116316e3035[m
+Author: JeisonRuiz1 <JeisonRuiz1910@gmail.com>
+Date:   Sun Feb 28 14:17:02 2021 -0500
+
+    Initial commit
