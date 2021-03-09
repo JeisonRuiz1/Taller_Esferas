@@ -11,6 +11,6 @@ package controller;
  *
  */
 public class Constants {
-	public static final String MENU = "1. Mostrar La distancia mas lejana\n2. Mostrar la distancia que mas se repite\n3. Mostrar la lista\n4. Salir";
+	public static final String MENU = "1. Mostrar La distancia mas lejana\n2. Mostrar la distancia que mas se repite\n3. Mostrar la lista de distancias\n4. Salir";
 	public static final String MESSAGE_DEFAULT = "Ingrese una opcion valida";
 }
