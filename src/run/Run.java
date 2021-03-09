@@ -32,5 +32,6 @@ public class Run {
             new Controller(list,view);
 
     	}
-    	    }
+    }
+    
 }

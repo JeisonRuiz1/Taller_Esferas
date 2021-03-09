@@ -11,4 +11,5 @@ package utilities;
  */
 public interface ISeacrhCriterio<T> {
     public boolean searchByCriterian(T object1);
+    
 }

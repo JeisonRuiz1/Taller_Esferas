@@ -9,6 +9,7 @@ public class Speed {
 	private double y;
 	private double z;
 
+	
 	/**
 	 * @param x
 	 * @param y

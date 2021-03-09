@@ -43,8 +43,4 @@ public class MySimpleNodo <T>{
 	public T getInfo() {
 		return info;
 	}
-
-
-    
-    
 }

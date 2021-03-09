@@ -49,4 +49,5 @@ public class View {
 		System.out.println("Enter para continuar");
 		scanner.nextLine();
 	}
+	
 }
