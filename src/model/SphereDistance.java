@@ -112,9 +112,7 @@ public class SphereDistance {
                 mostDistancesReps.add(num);
             }
         });
-        for (Double double1 : mostDistancesReps) {
-			System.out.println("Distancia : "+double1);
-		}
+        
         return mostDistancesReps;
 	}	
 	

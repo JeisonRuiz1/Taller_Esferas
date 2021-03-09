@@ -2,6 +2,8 @@ package utilities;
 
 import java.util.Comparator;
 
+import view.View;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -197,9 +199,10 @@ public class MySimpleList <T> {
      * Imprime los elements de la lista
      */
     public void printList(){
+    	View view = new View();
         reset();
-        while (this.currentElement != null) {
-               System.out.println(this.currentElement.info);
+        while (this.currentElement != null) {               
+              view.showMessage((String) currentElement.info);
                next();
         }      
     }

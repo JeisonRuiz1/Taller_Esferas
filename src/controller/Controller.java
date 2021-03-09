@@ -10,6 +10,8 @@ import model.Coordinate;
 import model.Speed;
 import model.Sphere;
 import model.SphereList;
+import utilities.Cursor;
+import utilities.MySimpleNodo;
 import view.View;
 
 /**
@@ -48,7 +50,7 @@ public class Controller {
 			init();
 			break;
 		case 3:
-			view.showMessage(getList());
+			getList();
 			view.spaceMoment();
 			init();
 			break;
@@ -72,11 +74,11 @@ public class Controller {
 		return "La distancia que mas se repite es: "+sphereList.getSphereDistance().getModa();
 	}
 	
-	private String getList() {
-		String result = "";
-		//recorrer estructura
+	
+	private void getList() {
+		Cursor cursor = new Cursor(sphereList.getSphereDistance().getDistanceList());
+		cursor.printList();
 		
-		return result = "";
 	}
 	public static void main(String[] args) {
 		Sphere[] sphere = new Sphere[10];

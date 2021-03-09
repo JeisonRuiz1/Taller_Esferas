@@ -21,6 +21,17 @@ public class Cursor <T>{
     public void reset() {
         this.currentElement = this.mySimpleList.head;
     }
+    
+    /**
+     * Imprime los elements de la lista
+     */
+    public void printList(){
+        reset();
+        while (this.currentElement != null) {
+               System.out.println(this.currentElement.info);
+               next();
+        }  
+    }
 
     public T next() {
         T aux = this.currentElement.info;
