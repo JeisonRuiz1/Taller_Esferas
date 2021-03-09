@@ -30,21 +30,6 @@ public class SphereDistance {
 		cursor = new Cursor<Double>(distanceList);
 	}
 
-	/**
-	 * Complejidad O(1)
-	 * @return arbol binario
-	 */
-	public BinaryTree getDistanceList() {
-		return distanceList;
-	}
-
-	/**
-	 * Complejidad O(1)
-	 * @param distanceList
-	 */
-	public void setDistanceList(BinaryTree distanceList) {
-		this.distanceList = distanceList;
-	}
 	
 	/**
 	 * Calcula la distancia entre las esferas, tomando en cuenta la formula propuesta para coordenadas en 3d
@@ -72,6 +57,23 @@ public class SphereDistance {
 		averageDistance = averageDistance/distanceList.getSize();
 		return averageDistance;
 	}
+
+	
+	/**
+	 * @return the distanceList
+	 */
+	public MySimpleList<Double> getDistanceList() {
+		return distanceList;
+	}
+
+
+	/**
+	 * @param distanceList the distanceList to set
+	 */
+	public void setDistanceList(MySimpleList<Double> distanceList) {
+		this.distanceList = distanceList;
+	}
+
 
 	/**
 	 * @return the mostDistance

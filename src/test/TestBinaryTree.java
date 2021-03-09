@@ -12,7 +12,7 @@ public class TestBinaryTree {
 	
 	public static void main(String[] args) {
 		//-------------------------------Test distance------------------------------------------------
-		SphereList sphereList = new SphereList(10);
+		//SphereList sphereList = new SphereList(10);
 //		for (int i = 0; i <10; i++){
 //			if (i < 5) {
 //							sphereList.getSpheresList()[i] = (new Sphere(new Coordinate(Math.random()*400,Math.random()*400, Math.random()*400),new Speed(9, 6, 6),6));
@@ -26,7 +26,7 @@ public class TestBinaryTree {
 //		}
 //		sphereList.setDistances();
 		//sphereList.getSphereDistance().getDistanceList().printList();;
-		sphereList.getSphereDistance().getModa();
+		//sphereList.getSphereDistance().getModa();
 		
 	}
 

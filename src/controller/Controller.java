@@ -6,6 +6,9 @@
  */
 package controller;
 
+import model.Coordinate;
+import model.Speed;
+import model.Sphere;
 import model.SphereList;
 import view.View;
 
@@ -31,7 +34,9 @@ public class Controller {
 	
 	private void init() {
 		view.showMessage(Constants.MENU);
-		switch (view.getOption()) {
+		int a = view.getOption();
+		System.out.println(a);
+		switch (a) {
 		case 1:
 			view.showMessage(getMostDistance());
 			view.spaceMoment();
@@ -72,6 +77,13 @@ public class Controller {
 		//recorrer estructura
 		
 		return result = "";
+	}
+	public static void main(String[] args) {
+		Sphere[] sphere = new Sphere[10];
+		for (int i = 0; i < sphere.length; i++) {
+			sphere[i] = new Sphere(new Coordinate( Math.random()*100+1,  Math.random()*100+1,  Math.random()*100+1), new Speed( Math.random()*10, Math.random()*10, Math.random()*10), Math.random()*50+1);
+		}
+		new Controller(new SphereList(sphere),new View());
 	}
 	
 	
