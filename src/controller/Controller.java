@@ -69,7 +69,7 @@ public class Controller {
 		return "Promedio: "+sphereList.getSphereDistance().getAverageDistance();
 	}
 	private String getModa() {
-		return "La distancia que mas se repite es: "/*Moda aritmetica*/;
+		return "La distancia que mas se repite es: "+sphereList.getSphereDistance().getModa();
 	}
 	
 	private String getList() {
