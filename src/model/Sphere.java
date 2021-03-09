@@ -77,4 +77,10 @@ public class Sphere {
 	public void setRadio(double radio) {
 		this.radio = radio;
 	}
+	@Override
+	public String toString() {
+		return "Sphere [coordinate=" + coordinate.toString() + ", speed=" + speed.toString() + ", radio=" + radio + "]";
+	}
+	
+	
 }

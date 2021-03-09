@@ -16,19 +16,43 @@ public class SphereList {
 	 * @param sphereList
 	 * Complejidad O(1)
 	 */
-	public SphereList(Sphere[] sphereList) {
+	public SphereList(Sphere[] sphereList, int time) {
 		spheresList = sphereList;
 		sphereDistance = new SphereDistance();
+		moveSpheres(time);
 	}
 	
 	/**
      * Recorre la lista de esferas e incrementa sus coordenadas
      * Complejidad O(log N)
      */
-    private void moveSpheres(){
-      for (Sphere sphere : spheresList) {
-			sphere.move();
-      }
+    private void moveSpheres(int time){
+    	new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				for(int i = 0; i<time ; i++) {
+					
+		    		 for (Sphere sphere : spheresList) {
+		    				sphere.move();
+		    				setDistances();
+		    	      }
+		    		 System.out.println(""+i);
+		    		 System.out.println(spheresList[0].getCoordinate().getxAxis());
+		    		 System.out.println(spheresList[0].toString());
+		    		 try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+		    	}
+				
+			}
+		}).start();; 
+			
+    	
+     
     }
  
    /**

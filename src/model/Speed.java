@@ -94,6 +94,11 @@ public class Speed {
 		this.z = z;
 	}
 
+	@Override
+	public String toString() {
+		return "Speed [x=" + x + ", y=" + y + ", z=" + z + "]";
+	}
+
 	
 	
 	

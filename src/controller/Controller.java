@@ -81,11 +81,14 @@ public class Controller {
 		
 	}
 	public static void main(String[] args) {
-		Sphere[] sphere = new Sphere[10];
+		Sphere[] sphere = new Sphere[30];
 		for (int i = 0; i < sphere.length; i++) {
-			sphere[i] = new Sphere(new Coordinate( Math.random()*100+1,  Math.random()*100+1,  Math.random()*100+1), new Speed( Math.random()*10, Math.random()*10, Math.random()*10), Math.random()*50+1);
+			sphere[i] = new Sphere(new Coordinate( (int)(Math.random()*1000+1),  
+					(int)(Math.random()*1000+1),  (int)(Math.random()*1000+1)),
+					new Speed( (int)(Math.random()*10+1), (int)(Math.random()*10+1),(int)( Math.random()*10+1)), 
+					(int)(Math.random()*20+1));
 		}
-		new Controller(new SphereList(sphere),new View());
+		new Controller(new SphereList(sphere,10),new View());
 	}
 	
 	

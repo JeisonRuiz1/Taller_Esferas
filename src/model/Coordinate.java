@@ -64,5 +64,10 @@ public class Coordinate {
 		this.zAxis = zAxis;
 	}
 
+	@Override
+	public String toString() {
+		return "Coordinate [xAxis=" + xAxis + ", yAxis=" + yAxis + ", zAxis=" + zAxis + "]";
+	}
+
    
 }
