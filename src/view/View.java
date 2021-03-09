@@ -31,7 +31,7 @@ public class View {
 	public int getOption() {
 		int result = 0;
 		try {
-			Integer.parseInt(scanner.nextLine());	
+			result = Integer.parseInt(scanner.nextLine());	
 		} catch (NumberFormatException e) {
 			showMessage("Ingrese una opcion valida:");
 			getOption();
