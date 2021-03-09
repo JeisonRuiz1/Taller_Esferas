@@ -7,7 +7,7 @@ package model;
  * @Date mar 7, 2021
  */
 
-public class SphereList {
+public class SphereList extends MyThread {
 	
 	private Sphere[] spheresList;
 	private SphereDistance sphereDistance;
@@ -17,9 +17,12 @@ public class SphereList {
 	 * Complejidad O(1)
 	 */
 	public SphereList(Sphere[] sphereList) {
+		super(100);
 		spheresList = sphereList;
 		sphereDistance = new SphereDistance();
-		runSpheres();
+		this.start();
+//		moveSpheres();
+//		runSpheres();
 	}
 	
 	/**
@@ -27,19 +30,18 @@ public class SphereList {
      * Complejidad O(log N)
      */
 
-	 /**
+	 
     private void moveSpheres(){
-      for (Sphere sphere : spheresList) {
-			sphere.move();
-      }
+    	
+      
     }
-	 */
+	
  
-	public void runSpheres(){
-		for (int i = 0; i < spheresList.length; i++) {
-			spheresList[i].start();
-		}
-    }
+//	public void runSpheres(){
+//		for (int i = 0; i < spheresList.length; i++) {
+//			spheresList[i].start();
+//		}
+//    }
    /**
     * Aniade las distancias calculadas entre todas las esferas del arreglo
     * Complejidad O(N log N)
@@ -97,6 +99,17 @@ public class SphereList {
 	public void changeDirection(Sphere sphere1,Sphere sphere2) {
 		sphere1.getSpeed().changeDirection();
 		sphere2.getSpeed().changeDirection();
+	}
+
+	@Override
+	protected void executeTask() {
+		
+		for (Sphere sphere : spheresList) {
+			sphere.move();
+      }
+		setDistances();
+		System.out.println(this.sphereDistance.getMostDistance());
+		
 	}
 
 }
