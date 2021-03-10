@@ -41,13 +41,11 @@ public class SphereList {
 					
 		    		 for (Sphere sphere : spheresList) {
 		    				sphere.move();
-		    				setDistances();
+		    				
 		    	      }
+					setDistances();
 		    		 
-		    		 System.out.println(""+i);
-		    		 System.out.println("Mayor distancia "+ sphereDistance.getMostDistance());
-		    		 System.out.println(spheresList.get(0).getCoordinate().getxAxis());
-		    		 System.out.println(spheresList.get(0).toString());
+		    		
 		    		
 		    	}
 				
@@ -102,7 +100,7 @@ public class SphereList {
 	public boolean coolision(Sphere sphere1,Sphere sphere2) {
 		boolean result  =false;
 		
-		if((sphere1.getRadio()+sphere2.getRadio()) <= (int)(sphereDistance.calculateDistance(sphere1,sphere2))) {
+		if((sphere1.getRadio()+sphere2.getRadio())>= (int)(sphereDistance.calculateDistance(sphere1,sphere2))) {
 			result = true;
 		}
 		return result;
