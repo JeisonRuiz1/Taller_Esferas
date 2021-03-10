@@ -1,5 +1,8 @@
 
 package model;
+
+import java.util.ArrayList;
+
 /**
  * @Author Edwar Malpica-Esteban Novoa Quiniones
  * @NameClass SphereList.java
@@ -9,16 +12,19 @@ package model;
 
 public class SphereList {
 	
-	private Sphere[] spheresList;
+	private ArrayList<Sphere> spheresList;
 	private SphereDistance sphereDistance;
 	
 	/**
 	 * @param sphereList
 	 * Complejidad O(1)
 	 */
-	public SphereList(Sphere[] sphereList, int time) {
+	public SphereList(ArrayList<Sphere> sphereList, int time) {
 		spheresList = sphereList;
 		sphereDistance = new SphereDistance();
+		for (Sphere sphere : sphereList) {
+			
+		}
 		moveSpheres(time);
 	}
 	
@@ -40,14 +46,9 @@ public class SphereList {
 		    		 
 		    		 System.out.println(""+i);
 		    		 System.out.println("Mayor distancia "+ sphereDistance.getMostDistance());
-		    		 System.out.println(spheresList[0].getCoordinate().getxAxis());
-		    		 System.out.println(spheresList[0].toString());
-		    		 try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+		    		 System.out.println(spheresList.get(0).getCoordinate().getxAxis());
+		    		 System.out.println(spheresList.get(0).toString());
+		    		
 		    	}
 				
 			}
@@ -62,17 +63,17 @@ public class SphereList {
     * Complejidad O(N log N)
     */
 	public void setDistances() {
-		for (int i = 0; i < spheresList.length - 1; i++) {
-			for (int j = i+1; j < spheresList.length; j++) {
-				double distanceSpheres = sphereDistance.calculateDistance(spheresList[i], spheresList[j]);
+		for (int i = 0; i < spheresList.size() - 1; i++) {
+			for (int j = i+1; j < spheresList.size(); j++) {
+				double distanceSpheres = sphereDistance.calculateDistance(spheresList.get(i), spheresList.get(j));
 				if (distanceSpheres>sphereDistance.getMostDistance()) {
 					sphereDistance.setMostDistance(distanceSpheres);
 				}
-				
-				if(coolision(spheresList[i], spheresList[j])){
-					changeDirection(spheresList[i], spheresList[j]);
+				if(coolision(spheresList.get(i), spheresList.get(j))){
+					changeDirection(spheresList.get(i), spheresList.get(j));
 				}	
-				sphereDistance.getDistanceList().add(distanceSpheres);
+				sphereDistance.getDistanceList().add((double) distanceSpheres);
+				
 			}
 			
 		}

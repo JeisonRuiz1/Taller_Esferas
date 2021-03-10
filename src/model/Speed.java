@@ -28,8 +28,8 @@ public class Speed {
 	 */
 	public void changeDirection() {
 		double r = Math.sqrt(Math.pow(x, 2)+Math.pow(y, 2)+Math.pow(z, 2));
-		double alpha = Math.toDegrees(Math.acos(Math.toRadians(z/r)));
-		double fi = Math.toDegrees(Math.atan(Math.toRadians(y/x)));
+		double alpha = Math.acos(z/r);
+		double fi = Math.atan(y/x);
 		if(alpha<90 && alpha> 0) {
 		  alpha = alpha + Math.random()*90;
 		}
@@ -42,9 +42,9 @@ public class Speed {
 		if(fi<360 && fi<180) {
 			fi = fi - Math.random()*180;
 		}
-		x = r* Math.toDegrees(Math.sin(Math.toRadians(alpha))*Math.cos(Math.toRadians(fi)));
-		y = r* Math.toDegrees(Math.sin(Math.toRadians(alpha))*Math.sin(Math.toRadians(fi)));
-		z = r* Math.toDegrees(Math.cos(Math.toRadians(alpha)));
+		x =  (int)(r* Math.sin(alpha)*Math.cos(fi));
+		y =  (int)(r* Math.sin(alpha)*Math.sin(fi));
+		z = (int)(r* Math.cos(alpha));
 	}
 	
 

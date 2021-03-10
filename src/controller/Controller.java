@@ -6,6 +6,8 @@
  */
 package controller;
 
+import java.util.ArrayList;
+
 import model.Coordinate;
 import model.Speed;
 import model.Sphere;
@@ -81,13 +83,16 @@ public class Controller {
 		
 	}
 	public static void main(String[] args) {
-		Sphere[] sphere = new Sphere[30];
-		for (int i = 0; i < sphere.length; i++) {
-			sphere[i] = new Sphere(new Coordinate( (int)(Math.random()*1000+1),  
+		ArrayList<Sphere> sphere = new ArrayList<Sphere>();
+		for (int i = 0; i < 30; i++) {
+			sphere.add( new Sphere(new Coordinate( (int)(Math.random()*1000+1),  
 					(int)(Math.random()*1000+1),  (int)(Math.random()*1000+1)),
 					new Speed( (int)(Math.random()*10+1), (int)(Math.random()*10+1),(int)( Math.random()*10+1)), 
-					(int)(Math.random()*20+1));
+					(int)(Math.random()*20+1)));
 		}
+//		for (Sphere sphere2 : sphere) {
+//			System.out.println(sphere2.toString());
+//		}
 		new Controller(new SphereList(sphere,10),new View());
 	}
 	
