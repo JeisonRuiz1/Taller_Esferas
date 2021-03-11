@@ -70,7 +70,7 @@ public class Controller {
 		
 	}
 	private String getMostDistance() {	
-		return "Promedio: "+sphereList.getSphereDistance().getAverageDistance();
+		return "La distancia mas lejana: "+sphereList.getSphereDistance().getMostDistance();
 	}
 	private String getModa() {
 		return "La distancia que mas se repite es: "+sphereList.getSphereDistance().getModa();
@@ -78,22 +78,35 @@ public class Controller {
 	
 	
 	private void getList() {
-		Cursor cursor = new Cursor(sphereList.getSphereDistance().getDistanceList());
+		Cursor<Double> cursor = new Cursor<>(sphereList.getSphereDistance().getDistanceList());
 		cursor.printList();
 		
 	}
 	public static void main(String[] args) {
-		ArrayList<Sphere> sphere = new ArrayList<Sphere>();
-		for (int i = 0; i < 30; i++) {
-			sphere.add( new Sphere(new Coordinate( (int)(Math.random()*1000+1),  
-					(int)(Math.random()*1000+1),  (int)(Math.random()*1000+1)),
-					new Speed( (int)(Math.random()*10+1), (int)(Math.random()*10+1),(int)( Math.random()*10+1)), 
-					(int)(Math.random()*20+1)));
+		if(args.length == 2) {
+			int args1 = 0;
+			int args2 = 0;
+			try {
+				args1 = Integer.parseInt(args[0]);
+				args2 = Integer.parseInt(args[1]);
+			} catch (NumberFormatException e) {
+				System.out.println("Argumentos invalidos\n Inserte numero de esferas y tiempo en segundos");
+			}
+			ArrayList<Sphere> sphere = new ArrayList<Sphere>();
+			for (int i = 0; i < args1; i++) {
+				sphere.add( new Sphere(new Coordinate( (int)(Math.random()*1000+1),  
+						(int)(Math.random()*1000+1),  (int)(Math.random()*1000+1)),
+						new Speed( (int)(Math.random()*10+1), (int)(Math.random()*10+1),(int)( Math.random()*10+1)), 
+						(int)(Math.random()*20+1)));
+			}
+//			for (Sphere sphere2 : sphere) {
+//				System.out.println(sphere2.toString());
+//			}
+			new Controller(new SphereList(sphere,args2),new View());
+		}else {
+			System.out.println("Argumentos invalidos\n Inserte numero de esferas y tiempo en segundos");
 		}
-//		for (Sphere sphere2 : sphere) {
-//			System.out.println(sphere2.toString());
-//		}
-		new Controller(new SphereList(sphere,10),new View());
+		
 	}
 	
 	
